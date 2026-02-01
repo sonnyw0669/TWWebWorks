@@ -5,7 +5,13 @@ Business Page
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TW WebWorks</title>
+
+<title>TW WebWorks – Affordable Custom Websites</title>
+
+<!-- Social / Mobile Compatibility -->
+<meta property="og:title" content="TW WebWorks">
+<meta property="og:description" content="Fast, affordable custom websites for any business.">
+<meta property="og:type" content="website">
 
 <style>
 :root {
@@ -29,7 +35,7 @@ body {
   line-height: 1.6;
 }
 
-/* BACKGROUND SLIDESHOW */
+/* BACKGROUND SLIDESHOW (DESKTOP ONLY) */
 .bg {
   position: fixed;
   inset: 0;
@@ -58,14 +64,14 @@ body {
 
 /* CONTENT */
 header {
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem;
   text-align: center;
   max-width: 900px;
   margin: auto;
 }
 
 header h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 5vw, 2.6rem);
 }
 
 header span {
@@ -75,12 +81,12 @@ header span {
 header p {
   margin-top: 1rem;
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 section {
   max-width: 900px;
-  margin: 4rem auto;
+  margin: 3rem auto;
   padding: 0 1.5rem;
 }
 
@@ -90,8 +96,14 @@ h2 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 
 .card {
@@ -102,11 +114,9 @@ h2 {
 
 .card img {
   width: 100%;
-  height: 120px;
-  object-fit: cover;
+  height: auto;
   border-radius: 10px;
   margin: .75rem 0;
-  opacity: 0.9;
 }
 
 .price {
@@ -131,106 +141,24 @@ footer {
   padding: 3rem 1.5rem;
   color: var(--muted);
 }
+
+/* MOBILE FIXES FOR FB / IG / SAFARI */
+@media (max-width: 600px) {
+  .bg,
+  .overlay {
+    display: none;
+  }
+
+  body {
+    background: #0f172a;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND IMAGES (DESKTOP ONLY) -->
 <div class="bg">
-  <div class="active" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600');"></div>
-  <div style="background-image:url('https://images.unsplash.com/photo-1565372918679-1e129f8b6d31?w=1600');"></div>
-  <div style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600');"></div>
-  <div style="background-image:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=1600');"></div>
-</div>
+  <div class="active" style="backgrou
 
-<div class="overlay"></div>
-
-<header>
-  <h1>Websites Built Your Way<br><span>TW WebWorks</span></h1>
-  <p>Fast, efficient, and customized exactly how you want.</p>
-  <a href="#pricing" class="button">Get Started</a>
-</header>
-
-<section>
-  <h2>What We Do</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Custom Websites</h3>
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200">
-      <p>Clean, lightweight sites designed around how you actually want to use them.</p>
-    </div>
-
-    <div class="card">
-      <h3>Efficiency Tuning</h3>
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
-      <p>Speed improvements, cleanup, and optimization for existing sites.</p>
-    </div>
-
-    <div class="card">
-      <h3>Personal Tweaks</h3>
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
-      <p>Small changes, special features, or layout quirks — we make it fit you.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Affordable & Built for You</h2>
-  <div class="card">
-    <p>
-      My goal with TW WebWorks is to make websites affordable, fast, and easy to work with.
-      I focus on clear communication, efficient builds, and being available when you need changes.
-    </p>
-    <p style="margin-top:1rem;">
-      You don’t need an expensive agency to get a website that works well and looks professional.
-    </p>
-  </div>
-</section>
-
-<section id="pricing">
-  <h2>Pricing</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Starter Site</h3>
-      <p>Simple, fast, and clean</p>
-      <div class="price">$45</div>
-    </div>
-
-    <div class="card">
-      <h3>Custom Build</h3>
-      <p>Tailored exactly to you</p>
-      <div class="price">$90</div>
-    </div>
-
-    <div class="card">
-      <h3>Speed & Fixes</h3>
-      <p>Improve an existing site</p>
-      <div class="price">$40 or $15/hr</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:2rem; text-align:center;">
-    <p>
-      📧 <strong>twwebworks@gmail.com</strong><br>
-      📞 <strong>810-241-7628</strong>
-    </p>
-  </div>
-</section>
-
-<footer>
-  © 2026 • TW WebWorks
-</footer>
-
-<script>
-const slides = document.querySelectorAll('.bg div');
-let i = 0;
-
-setInterval(() => {
-  slides[i].classList.remove('active');
-  i = (i + 1) % slides.length;
-  slides[i].classList.add('active');
-}, 6000);
-</script>
-
-</body>
-</html>
