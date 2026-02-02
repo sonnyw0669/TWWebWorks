@@ -14,12 +14,12 @@ Business Page
 
 <style>
 :root {
-  --bg: #0b1220;
-  --card: #111827;
-  --text: #f1f5f9;
-  --muted: #cbd5f5;
-  --accent: #38bdf8;
-  --accent2: #22d3ee;
+  --bg: #0a0f1f;          /* deep navy */
+  --card: #0f172a;        /* navy card */
+  --text: #f8fafc;        /* white */
+  --muted: #cbd5e1;       /* soft gray */
+  --accent: #dc2626;      /* red */
+  --accent2: #2563eb;     /* blue */
 }
 
 * {
@@ -30,7 +30,7 @@ Business Page
 }
 
 body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: radial-gradient(circle at top, #1e3a8a, #020617);
   color: var(--text);
   line-height: 1.6;
 }
@@ -79,8 +79,15 @@ header h1 {
 }
 
 header span {
-  color: var(--accent);
-  text-shadow: 0 0 20px rgba(56,189,248,.5);
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #ffffff,
+    #2563eb
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(37,99,235,.45);
 }
 
 header p {
@@ -93,18 +100,20 @@ header p {
   display: inline-block;
   margin-top: 2.25rem;
   padding: .9rem 1.9rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: #020617;
+  background: linear-gradient(135deg, #dc2626, #2563eb);
+  color: #ffffff;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(34,211,238,.35);
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(37,99,235,.35);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(34,211,238,.55);
+  box-shadow:
+    0 15px 40px rgba(220,38,38,.45),
+    0 0 25px rgba(37,99,235,.35);
 }
 
 /* SECTIONS */
@@ -119,6 +128,7 @@ h2 {
   font-size: 2rem;
 }
 
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -135,18 +145,20 @@ h2 {
 .card {
   background: linear-gradient(
     to bottom right,
-    rgba(17,24,39,.95),
+    rgba(15,23,42,.95),
     rgba(2,6,23,.95)
   );
   padding: 1.75rem;
   border-radius: 18px;
-  border: 1px solid rgba(148,163,184,.12);
+  border: 1px solid rgba(37,99,235,.25);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 25px 50px rgba(0,0,0,.6);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.6),
+    0 0 20px rgba(220,38,38,.15);
 }
 
 .card img {
@@ -158,17 +170,24 @@ h2 {
 }
 
 .price {
-  color: var(--accent);
-  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #ffffff,
+    #2563eb
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
   margin-top: .75rem;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 /* CONTACT */
 .contact a {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .contact a:hover {
@@ -249,7 +268,7 @@ footer {
   <div class="card contact" style="margin-top:3rem; text-align:center;">
     <p>
       📧 
-      <a href="mailto:twwebworks@gmail.com?subject=Website%20Inquiry%20-%20TW%20WebWorks&body=Hi%20TW%20WebWorks,%0D%0A%0D%0AI'm%20interested%20in%20a%20website%20for%20my%20business.%0D%0A%0D%0APlease%20let%20me%20know%20the%20next%20steps.%0D%0A%0D%0AThank%20you!">
+      <a href="mailto:twwebworks@gmail.com?subject=Website%20Inquiry%20-%20TW%20WebWorks">
         twwebworks@gmail.com
       </a>
       <br>
