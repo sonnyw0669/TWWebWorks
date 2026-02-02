@@ -7,18 +7,19 @@ Business Page
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TW WebWorks</title>
 
-<!-- Social Preview (safe everywhere) -->
+<!-- Social Preview -->
 <meta property="og:title" content="TW WebWorks">
 <meta property="og:description" content="Fast, affordable custom websites for any business.">
 <meta property="og:type" content="website">
 
 <style>
 :root {
-  --bg: #0f172a;
+  --bg: #0b1220;
   --card: #111827;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  --text: #f1f5f9;
+  --muted: #cbd5f5;
   --accent: #38bdf8;
+  --accent2: #22d3ee;
 }
 
 * {
@@ -29,12 +30,12 @@ Business Page
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: var(--text);
   line-height: 1.6;
 }
 
-/* BACKGROUND SLIDESHOW (SAFE) */
+/* BACKGROUND SLIDESHOW */
 .bg {
   position: fixed;
   inset: 0;
@@ -57,82 +58,127 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: linear-gradient(
+    to bottom,
+    rgba(2,6,23,.65),
+    rgba(2,6,23,.9)
+  );
   z-index: -1;
 }
 
-/* CONTENT */
+/* HEADER */
 header {
-  padding: 5rem 1.5rem;
+  padding: 6rem 1.5rem 5rem;
   text-align: center;
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
 }
 
 header h1 {
-  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-size: clamp(2.2rem, 5vw, 3rem);
 }
 
 header span {
   color: var(--accent);
+  text-shadow: 0 0 20px rgba(56,189,248,.5);
 }
 
 header p {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   color: var(--muted);
-  font-size: 1.1rem;
-}
-
-section {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-}
-
-h2 {
-  margin-bottom: 1.25rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--card);
-  padding: 1.5rem;
-  border-radius: 14px;
-}
-
-.card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: .75rem 0;
-}
-
-.price {
-  color: var(--accent);
-  font-weight: bold;
-  margin-top: .5rem;
+  font-size: 1.15rem;
 }
 
 .button {
   display: inline-block;
-  margin-top: 1.75rem;
-  padding: .75rem 1.5rem;
-  background: var(--accent);
-  color: #000;
+  margin-top: 2.25rem;
+  padding: .9rem 1.9rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #020617;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(34,211,238,.35);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(34,211,238,.55);
+}
+
+/* SECTIONS */
+section {
+  max-width: 950px;
+  margin: 4.5rem auto;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CARDS */
+.card {
+  background: linear-gradient(
+    to bottom right,
+    rgba(17,24,39,.95),
+    rgba(2,6,23,.95)
+  );
+  padding: 1.75rem;
+  border-radius: 18px;
+  border: 1px solid rgba(148,163,184,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,.6);
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: 800;
+  margin-top: .75rem;
+  font-size: 1.15rem;
+}
+
+/* CONTACT */
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   color: var(--muted);
 }
 </style>
@@ -151,7 +197,7 @@ footer {
 
 <header>
   <h1>Websites Built Your Way<br><span>TW WebWorks</span></h1>
-  <p>Fast, efficient, and customized exactly how you want.</p>
+  <p>Fast, efficient, and customized exactly how you want — built to help businesses stand out.</p>
   <a href="#pricing" class="button">Get Started</a>
 </header>
 
@@ -161,19 +207,19 @@ footer {
     <div class="card">
       <h3>Custom Websites</h3>
       <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200">
-      <p>Clean, lightweight sites designed around how you actually want to use them.</p>
+      <p>Clean, modern sites designed around how your business actually works.</p>
     </div>
 
     <div class="card">
       <h3>Efficiency Tuning</h3>
       <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
-      <p>Speed improvements, cleanup, and optimization for existing sites.</p>
+      <p>Speed improvements and performance tuning to keep visitors engaged.</p>
     </div>
 
     <div class="card">
       <h3>Personal Tweaks</h3>
       <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
-      <p>Small changes or layout quirks — we make it fit you.</p>
+      <p>Custom touches and layout details that make your site feel intentional.</p>
     </div>
   </div>
 </section>
@@ -189,21 +235,26 @@ footer {
 
     <div class="card">
       <h3>Custom Build</h3>
-      <p>Tailored exactly to you</p>
+      <p>Designed around your goals</p>
       <div class="price">$90</div>
     </div>
 
     <div class="card">
       <h3>Speed & Fixes</h3>
-      <p>Improve an existing site</p>
+      <p>Targeted improvements</p>
       <div class="price">$40 or $15/hr</div>
     </div>
   </div>
 
-  <div class="card" style="margin-top:2rem; text-align:center;">
+  <div class="card contact" style="margin-top:3rem; text-align:center;">
     <p>
-      📧 <strong>twwebworks@gmail.com</strong><br>
-      📞 <strong>810-241-7628</strong>
+      📧 
+      <a href="mailto:twwebworks@gmail.com?subject=Website%20Inquiry%20-%20TW%20WebWorks&body=Hi%20TW%20WebWorks,%0D%0A%0D%0AI'm%20interested%20in%20a%20website%20for%20my%20business.%0D%0A%0D%0APlease%20let%20me%20know%20the%20next%20steps.%0D%0A%0D%0AThank%20you!">
+        twwebworks@gmail.com
+      </a>
+      <br>
+      📞 
+      <a href="tel:+18102417628">810-241-7628</a>
     </p>
   </div>
 </section>
@@ -220,7 +271,7 @@ setInterval(() => {
   slides[i].classList.remove('active');
   i = (i + 1) % slides.length;
   slides[i].classList.add('active');
-}, 6000);
+}, 6500);
 </script>
 
 </body>
