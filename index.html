@@ -7,19 +7,19 @@ Business Page
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TW WebWorks</title>
 
-<!-- Social Preview -->
 <meta property="og:title" content="TW WebWorks">
-<meta property="og:description" content="Fast, affordable custom websites for any business.">
+<meta property="og:description" content="We invest in your business like it's our own.">
 <meta property="og:type" content="website">
 
 <style>
 :root {
-  --bg: #0a0f1f;          /* deep navy */
-  --card: #0f172a;        /* navy card */
-  --text: #f8fafc;        /* white */
-  --muted: #cbd5e1;       /* soft gray */
-  --accent: #dc2626;      /* red */
-  --accent2: #2563eb;     /* blue */
+  --bg: #020617;
+  --card: #0f172a;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --red: #dc2626;
+  --blue: #2563eb;
+  --white: #ffffff;
 }
 
 * {
@@ -35,7 +35,7 @@ body {
   line-height: 1.6;
 }
 
-/* BACKGROUND SLIDESHOW */
+/* BACKGROUND */
 .bg {
   position: fixed;
   inset: 0;
@@ -61,7 +61,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(2,6,23,.65),
-    rgba(2,6,23,.9)
+    rgba(2,6,23,.95)
   );
   z-index: -1;
 }
@@ -70,68 +70,43 @@ body {
 header {
   padding: 6rem 1.5rem 5rem;
   text-align: center;
-  max-width: 950px;
+  max-width: 980px;
   margin: auto;
 }
 
 header h1 {
-  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-size: clamp(2.4rem, 5vw, 3.3rem);
 }
 
 header span {
-  background: linear-gradient(
-    90deg,
-    #dc2626,
-    #ffffff,
-    #2563eb
-  );
+  background: linear-gradient(90deg, var(--red), var(--white), var(--blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 25px rgba(37,99,235,.45);
+  text-shadow: 0 0 30px rgba(37,99,235,.6);
 }
 
 header p {
-  margin-top: 1.25rem;
+  margin-top: 1.4rem;
   color: var(--muted);
-  font-size: 1.15rem;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 2.25rem;
-  padding: .9rem 1.9rem;
-  background: linear-gradient(135deg, #dc2626, #2563eb);
-  color: #ffffff;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(37,99,235,.35);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 15px 40px rgba(220,38,38,.45),
-    0 0 25px rgba(37,99,235,.35);
+  font-size: 1.2rem;
 }
 
 /* SECTIONS */
 section {
-  max-width: 950px;
+  max-width: 980px;
   margin: 4.5rem auto;
   padding: 0 1.5rem;
 }
 
 h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+  margin-bottom: 1.75rem;
+  font-size: 2.1rem;
+  text-align: center;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1.75rem;
 }
 
@@ -148,50 +123,75 @@ h2 {
     rgba(15,23,42,.95),
     rgba(2,6,23,.95)
   );
-  padding: 1.75rem;
-  border-radius: 18px;
+  padding: 1.8rem;
+  border-radius: 20px;
   border: 1px solid rgba(37,99,235,.25);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-7px);
   box-shadow:
-    0 25px 50px rgba(0,0,0,.6),
-    0 0 20px rgba(220,38,38,.15);
+    0 30px 60px rgba(0,0,0,.7),
+    0 0 30px rgba(220,38,38,.25);
 }
 
-.card img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 1rem 0;
+/* TASK LIST */
+.tasks li {
+  list-style: none;
+  padding: .7rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
+/* PRICE */
 .price {
-  background: linear-gradient(
-    90deg,
-    #dc2626,
-    #ffffff,
-    #2563eb
-  );
+  margin-top: 1rem;
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--red), var(--white), var(--blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  margin-top: .75rem;
-  font-size: 1.25rem;
 }
 
-/* CONTACT */
+/* CONTACT LINKS */
 .contact a {
-  color: #ffffff;
+  color: white;
+  font-weight: 800;
   text-decoration: none;
-  font-weight: 700;
 }
 
 .contact a:hover {
   text-decoration: underline;
+}
+
+/* FLOATING BUTTONS */
+.floating-button {
+  position: fixed;
+  bottom: 22px;
+  z-index: 999;
+  padding: .9rem 1.4rem;
+  background: linear-gradient(135deg, var(--red), var(--blue));
+  color: white;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 15px 40px rgba(37,99,235,.45);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.floating-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 20px 60px rgba(220,38,38,.55),
+    0 0 40px rgba(37,99,235,.45);
+}
+
+.spotify {
+  right: 22px;
+}
+
+.veterans {
+  left: 22px;
 }
 
 /* FOOTER */
@@ -205,50 +205,71 @@ footer {
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg">
   <div class="active" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600');"></div>
-  <div style="background-image:url('https://images.unsplash.com/photo-1565372918679-1e129f8b6d31?w=1600');"></div>
-  <div style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600');"></div>
   <div style="background-image:url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=1600');"></div>
 </div>
-
 <div class="overlay"></div>
 
+<!-- HERO -->
 <header>
-  <h1>Websites Built Your Way<br><span>TW WebWorks</span></h1>
-  <p>Fast, efficient, and customized exactly how you want — built to help businesses stand out.</p>
-  <a href="#pricing" class="button">Get Started</a>
+  <h1>We Build With You<br><span>TW WebWorks</span></h1>
+  <p>
+    This isn’t just a website.  
+    It’s a shared investment in how your business shows up online.
+  </p>
 </header>
 
+<!-- VALUE -->
 <section>
-  <h2>What We Do</h2>
+  <h2>Our Mindset</h2>
+  <p style="text-align:center; max-width:720px; margin:auto;">
+    When you invest in us, we treat your business like our own.
+    That means speed, clarity, intention, and real follow-through.
+  </p>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+  <h2>What We Actually Do</h2>
   <div class="grid">
     <div class="card">
-      <h3>Custom Websites</h3>
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200">
-      <p>Clean, modern sites designed around how your business actually works.</p>
+      <h3>Build & Design</h3>
+      <ul class="tasks">
+        <li>Custom layout and structure</li>
+        <li>Mobile-first responsiveness</li>
+        <li>Clean, modern visuals</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>Efficiency Tuning</h3>
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200">
-      <p>Speed improvements and performance tuning to keep visitors engaged.</p>
+      <h3>Optimize & Tune</h3>
+      <ul class="tasks">
+        <li>Speed and load optimization</li>
+        <li>Code cleanup</li>
+        <li>Performance testing</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h3>Personal Tweaks</h3>
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
-      <p>Custom touches and layout details that make your site feel intentional.</p>
+      <h3>Refine & Support</h3>
+      <ul class="tasks">
+        <li>Personal tweaks</li>
+        <li>Ongoing improvements</li>
+        <li>Clear communication</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="pricing">
-  <h2>Pricing</h2>
+<!-- PRICING -->
+<section>
+  <h2>Simple Pricing</h2>
   <div class="grid">
     <div class="card">
-      <h3>Starter Site</h3>
-      <p>Simple, fast, and clean</p>
+      <h3>Starter</h3>
+      <p>Quick launch, clean presence</p>
       <div class="price">$45</div>
     </div>
 
@@ -259,38 +280,52 @@ footer {
     </div>
 
     <div class="card">
-      <h3>Speed & Fixes</h3>
+      <h3>Fixes & Speed</h3>
       <p>Targeted improvements</p>
       <div class="price">$40 or $15/hr</div>
     </div>
   </div>
+</section>
 
-  <div class="card contact" style="margin-top:3rem; text-align:center;">
-    <p>
-      📧 
-      <a href="mailto:twwebworks@gmail.com?subject=Website%20Inquiry%20-%20TW%20WebWorks">
-        twwebworks@gmail.com
-      </a>
-      <br>
-      📞 
-      <a href="tel:+18102417628">810-241-7628</a>
+<!-- CONTACT -->
+<section>
+  <h2>Let’s Talk</h2>
+  <div class="card contact" style="text-align:center;">
+    <p style="font-size:1.15rem; line-height:2;">
+      <a href="mailto:twwebworks@gmail.com">twwebworks@gmail.com</a><br>
+      <a href="tel:+18102417628">810-241-7628</a><br>
+      <a href="sms:+18102417628">Text Us Directly</a>
     </p>
   </div>
 </section>
 
 <footer>
-  © 2026 • TW WebWorks
+  © 2026 • TW WebWorks — Built With Intention
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<a
+  href="https://open.spotify.com/collection/tracks"
+  target="_blank"
+  class="floating-button spotify">
+  Don’t forget your daily dose of music
+</a>
+
+<a
+  href="https://help.dav.org/page/52572/donate/1?ea.tracking.id=fund_sem&en_txn6=B00FN003AANACBSA&utm_campaign=fund&utm_medium=cpc&utm_source=bing&utm_term=dav%20taking%20donations&matchtype=e&msclkid=3be737d149401a1ca87f5e5145039ecc"
+  target="_blank"
+  class="floating-button veterans">
+  Support a Vet
+</a>
 
 <script>
 const slides = document.querySelectorAll('.bg div');
 let i = 0;
-
 setInterval(() => {
   slides[i].classList.remove('active');
   i = (i + 1) % slides.length;
   slides[i].classList.add('active');
-}, 6500);
+}, 7000);
 </script>
 
 </body>
